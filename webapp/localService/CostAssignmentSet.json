@@ -1,0 +1,61 @@
+[{
+	"ID": "Cost1",
+	"Desc": "Payroll Admin (2250)",
+	"Category": "Cost Center",
+	"Share": 50,
+	"___FK_a1d03212892b28410bd77d82": "Req1"
+}, {
+	"ID": "Cost2",
+	"Desc": "Executive Board (1110)",
+	"Category": "Cost Center",
+	"Share": 50,
+	"___FK_a1d03212892b28410bd77d82": "Req1"
+}, {
+	"ID": "Cost3",
+	"Desc": "Project BUILD (120012)",
+	"Category": "Internal Order",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req2"
+}, {
+	"ID": "Cost4",
+	"Desc": "Project BUILD (120012)",
+	"Category": "Internal Order",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req3"
+}, {
+	"ID": "Cost5",
+	"Desc": "000004972",
+	"Category": "Sales Order",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req4"
+}, {
+	"ID": "Cost6",
+	"Desc": "Project Actarus (15248)",
+	"Category": "Internal Order",
+	"Share": 75,
+	"___FK_a1d03212892b28410bd77d82": "Req5"
+}, {
+	"ID": "Cost7",
+	"Desc": "Project Orion (45211)",
+	"Category": "Internal Order",
+	"Share": 25,
+	"___FK_a1d03212892b28410bd77d82": "Req5"
+}, {
+	"ID": "Cost8",
+	"Desc": "Special Event (425)",
+	"Category": "Internal Order",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req6"
+}, {
+	"ID": "Cost9",
+	"Desc": "Sales EMEA (1221)",
+	"Category": "Cost Center",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req7"
+}, {
+	"ID": "Cost10",
+	"Desc": "Project Athena (1254)",
+	"Category": "Internal Order",
+	"Share": 100,
+	"___FK_a1d03212892b28410bd77d82": "Req8"
+}]

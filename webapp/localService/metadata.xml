@@ -1,0 +1,576 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="6a71a04abe391c371165e67b" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="6a71a04abe391c371165e67b_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="STCHeaderSetSet" EntityType="6a71a04abe391c371165e67b.STCHeaderSet" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="TravelRequestSet" EntityType="6a71a04abe391c371165e67b.TravelRequest" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="TravelRequestSubmitterSubmitter" Association="6a71a04abe391c371165e67b.TravelRequestSubmitterSubmitter"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestSubmitterSubmitter"/>
+					<End EntitySet="SubmitterSet" Role="ToRole_TravelRequestSubmitterSubmitter"/>
+				</AssociationSet>
+				<AssociationSet Name="TravelRequestAssignmentsCostAssignment" Association="6a71a04abe391c371165e67b.TravelRequestAssignmentsCostAssignment"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestAssignmentsCostAssignment"/>
+					<End EntitySet="CostAssignmentSet" Role="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				</AssociationSet>
+				<AssociationSet Name="TravelRequestInfosInfo" Association="6a71a04abe391c371165e67b.TravelRequestInfosInfo" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestInfosInfo"/>
+					<End EntitySet="InfoSet" Role="ToRole_TravelRequestInfosInfo"/>
+				</AssociationSet>
+				<EntitySet Name="SubmitterSet" EntityType="6a71a04abe391c371165e67b.Submitter" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="CostAssignmentSet" EntityType="6a71a04abe391c371165e67b.CostAssignment" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="InfoSet" EntityType="6a71a04abe391c371165e67b.Info" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="ApproverSet" EntityType="6a71a04abe391c371165e67b.Approver" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="PastRequestSet" EntityType="6a71a04abe391c371165e67b.PastRequest" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="PurchaseContractHeaderSet" EntityType="6a71a04abe391c371165e67b.PurchaseContractHeader" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"
+					Association="6a71a04abe391c371165e67b.PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="PurchaseContractHeaderSet" Role="FromRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"/>
+					<End EntitySet="PurchaseContractDetailsSet" Role="ToRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"/>
+				</AssociationSet>
+				<AssociationSet Name="PurchaseContractHeaderLineItemsSetLineItems"
+					Association="6a71a04abe391c371165e67b.PurchaseContractHeaderLineItemsSetLineItems" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="PurchaseContractHeaderSet" Role="FromRole_PurchaseContractHeaderLineItemsSetLineItems"/>
+					<End EntitySet="LineItemsSet" Role="ToRole_PurchaseContractHeaderLineItemsSetLineItems"/>
+				</AssociationSet>
+				<AssociationSet Name="PurchaseContractHeaderCommentsSetComments"
+					Association="6a71a04abe391c371165e67b.PurchaseContractHeaderCommentsSetComments" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="PurchaseContractHeaderSet" Role="FromRole_PurchaseContractHeaderCommentsSetComments"/>
+					<End EntitySet="CommentsSet" Role="ToRole_PurchaseContractHeaderCommentsSetComments"/>
+				</AssociationSet>
+				<EntitySet Name="PurchaseContractDetailsSet" EntityType="6a71a04abe391c371165e67b.PurchaseContractDetails" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="LineItemsSet" EntityType="6a71a04abe391c371165e67b.LineItems" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="LineItemsAccountAssignmentsSetAccountAssignments"
+					Association="6a71a04abe391c371165e67b.LineItemsAccountAssignmentsSetAccountAssignments" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="LineItemsSet" Role="FromRole_LineItemsAccountAssignmentsSetAccountAssignments"/>
+					<End EntitySet="AccountAssignmentsSet" Role="ToRole_LineItemsAccountAssignmentsSetAccountAssignments"/>
+				</AssociationSet>
+				<AssociationSet Name="LineItemsPricingConditionsSetPricingConditions"
+					Association="6a71a04abe391c371165e67b.LineItemsPricingConditionsSetPricingConditions" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true">
+					<End EntitySet="LineItemsSet" Role="FromRole_LineItemsPricingConditionsSetPricingConditions"/>
+					<End EntitySet="PricingConditionsSet" Role="ToRole_LineItemsPricingConditionsSetPricingConditions"/>
+				</AssociationSet>
+				<AssociationSet Name="LineItemsNotesNotes" Association="6a71a04abe391c371165e67b.LineItemsNotesNotes" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="LineItemsSet" Role="FromRole_LineItemsNotesNotes"/>
+					<End EntitySet="NotesSet" Role="ToRole_LineItemsNotesNotes"/>
+				</AssociationSet>
+				<EntitySet Name="CommentsSet" EntityType="6a71a04abe391c371165e67b.Comments" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="AccountAssignmentsSet" EntityType="6a71a04abe391c371165e67b.AccountAssignments" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="PricingConditionsSet" EntityType="6a71a04abe391c371165e67b.PricingConditions" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="EmployeesSet" EntityType="6a71a04abe391c371165e67b.Employees" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="NotesSet" EntityType="6a71a04abe391c371165e67b.Notes" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="EmployeeSet" EntityType="6a71a04abe391c371165e67b.Employee" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="EmployeePaystubSetPaystub" Association="6a71a04abe391c371165e67b.EmployeePaystubSetPaystub" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="EmployeeSet" Role="FromRole_EmployeePaystubSetPaystub"/>
+					<End EntitySet="PaystubSet" Role="ToRole_EmployeePaystubSetPaystub"/>
+				</AssociationSet>
+				<EntitySet Name="PaystubSet" EntityType="6a71a04abe391c371165e67b.Paystub" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="PaystubEmployeeSetEmployee" Association="6a71a04abe391c371165e67b.PaystubEmployeeSetEmployee" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="PaystubSet" Role="FromRole_PaystubEmployeeSetEmployee"/>
+					<End EntitySet="EmployeeSet" Role="ToRole_PaystubEmployeeSetEmployee"/>
+				</AssociationSet>
+			</EntityContainer>
+			<EntityType Name="STCHeaderSet">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Note" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<Property Name="Stc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName1"/>
+				<Property Name="Reject" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName2"/>
+				<Property Name="StcCreatedAt" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName3"/>
+				<Property Name="Allegato" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName4"/>
+				<Property Name="StcStato" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName5"/>
+				<Property Name="AllegatoTecnico" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName6"/>
+				<Property Name="StcNoteRej" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName7"/>
+				<Property Name="Classifier" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName8"/>
+				<Property Name="StcVersione" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName9"/>
+				<Property Name="DataModifica" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName10"/>
+				<Property Name="StcDescr" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName11"/>
+				<Property Name="Descrizione" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName12"/>
+				<Property Name="ProcessId" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName13"/>
+				<Property Name="Dimensione" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName14"/>
+				<Property Name="TaskId" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName15"/>
+				<Property Name="Gruppo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName16"/>
+				<Property Name="ProcedId" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName17"/>
+				<Property Name="Id1" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName18"/>
+				<Property Name="ProcedDescr" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName19"/>
+				<Property Name="Mimetype" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName20"/>
+				<Property Name="Rdo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName21"/>
+				<Property Name="Nome" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName22"/>
+				<Property Name="RdoResp" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName23"/>
+				<Property Name="PacStato" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName24"/>
+				<Property Name="PacNoteRej" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName25"/>
+				<Property Name="PacVersione" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName26"/>
+				<Property Name="Buyer" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName27"/>
+				<Property Name="BuyerFullname" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName28"/>
+				<Property Name="Proc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<Property Name="ProcFullname" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName1"/>
+				<Property Name="ContractVal" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName2"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName3"/>
+				<Property Name="CurrencyTxt" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName4"/>
+				<Property Name="MatGrp" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName5"/>
+				<Property Name="Icon" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+			</EntityType>
+			<EntityType Name="TravelRequest">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="Destination" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Destination"/>
+				<Property Name="Dates" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Dates"/>
+				<Property Name="ActivityType" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ActivityType"/>
+				<Property Name="CommentText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CommentText"/>
+				<Property Name="CommentDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CommentDate"/>
+				<Property Name="___FK_c0d5660ecd6d44dc0bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+				<Property Name="FullAmount" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;TravelRequest\&quot;,\&quot;entityId\&quot;:\&quot;TravelRequest\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Currency\&quot;,\&quot;propertyId\&quot;:\&quot;Currency\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;TravelRequest\&quot;,\&quot;entityId\&quot;:\&quot;TravelRequest\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Amount\&quot;,\&quot;propertyId\&quot;:\&quot;Amount\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;TravelRequest&quot;,&quot;propertyId&quot;:&quot;Currency&quot;,&quot;_id&quot;:&quot;57176c59fc3cc86f2394cf75&quot;},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;TravelRequest&quot;,&quot;propertyId&quot;:&quot;Amount&quot;,&quot;_id&quot;:&quot;57176c59fc3cc86f2394cf74&quot;}]}"
+					sap:label="FullAmount"/>
+				<Property Name="NbCostAssignments" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Cost Assignments (\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;CostAssignment\&quot;,\&quot;entityId\&quot;:\&quot;CostAssignment\&quot;,\&quot;navPropName\&quot;:\&quot;Assignments\&quot;,\&quot;navPropId\&quot;:\&quot;Assignments\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;)\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;Assignments&quot;,&quot;entityId&quot;:&quot;CostAssignment&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;_id&quot;:&quot;5727415c3174ff6717072c3a&quot;}]}"
+					sap:label="NbCostAssignments"/>
+				<NavigationProperty Name="Submitter" Relationship="6a71a04abe391c371165e67b.TravelRequestSubmitterSubmitter"
+					FromRole="FromRole_TravelRequestSubmitterSubmitter" ToRole="ToRole_TravelRequestSubmitterSubmitter"/>
+				<NavigationProperty Name="Assignments" Relationship="6a71a04abe391c371165e67b.TravelRequestAssignmentsCostAssignment"
+					FromRole="FromRole_TravelRequestAssignmentsCostAssignment" ToRole="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				<NavigationProperty Name="Infos" Relationship="6a71a04abe391c371165e67b.TravelRequestInfosInfo" FromRole="FromRole_TravelRequestInfosInfo"
+					ToRole="ToRole_TravelRequestInfosInfo"/>
+			</EntityType>
+			<Association Name="TravelRequestSubmitterSubmitter">
+				<End Type="6a71a04abe391c371165e67b.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestSubmitterSubmitter"/>
+				<End Type="6a71a04abe391c371165e67b.Submitter" Multiplicity="1" Role="ToRole_TravelRequestSubmitterSubmitter"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_TravelRequestSubmitterSubmitter">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_TravelRequestSubmitterSubmitter">
+						<PropertyRef Name="___FK_c0d5660ecd6d44dc0bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="TravelRequestAssignmentsCostAssignment">
+				<End Type="6a71a04abe391c371165e67b.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestAssignmentsCostAssignment"/>
+				<End Type="6a71a04abe391c371165e67b.CostAssignment" Multiplicity="*" Role="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TravelRequestAssignmentsCostAssignment">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_TravelRequestAssignmentsCostAssignment">
+						<PropertyRef Name="___FK_a1d03212892b28410bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="TravelRequestInfosInfo">
+				<End Type="6a71a04abe391c371165e67b.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestInfosInfo"/>
+				<End Type="6a71a04abe391c371165e67b.Info" Multiplicity="*" Role="ToRole_TravelRequestInfosInfo"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TravelRequestInfosInfo">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_TravelRequestInfosInfo">
+						<PropertyRef Name="___FK_d29ff446c6e9e2e10bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Submitter">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Org" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Org"/>
+				<Property Name="Company" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Company"/>
+				<Property Name="Address" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Address"/>
+				<Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+				<Property Name="Mobile" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mobile"/>
+				<Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+			</EntityType>
+			<EntityType Name="CostAssignment">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Desc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Desc"/>
+				<Property Name="Category" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Category"/>
+				<Property Name="Share" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Share"/>
+				<Property Name="___FK_a1d03212892b28410bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+			</EntityType>
+			<EntityType Name="Info">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Image" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Image"/>
+				<Property Name="___FK_d29ff446c6e9e2e10bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+			</EntityType>
+			<EntityType Name="Approver">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Org" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Org"/>
+			</EntityType>
+			<EntityType Name="PastRequest">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Destination" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Destination"/>
+				<Property Name="Dates" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Dates"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Status"/>
+				<Property Name="StatusVal" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StatusVal"/>
+			</EntityType>
+			<EntityType Name="PurchaseContractHeader">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="SAP__Origin" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SAP__Origin"/>
+				<Property Name="WorkitemID" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WorkitemID"/>
+				<Property Name="TaskType" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TaskType"/>
+				<Property Name="PoNumberFormatted" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="PoNumberFormatted"/>
+				<Property Name="WiCreatedAt" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WiCreatedAt"/>
+				<Property Name="CreatedByID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CreatedByID"/>
+				<Property Name="CreatedByName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CreatedByName"/>
+				<Property Name="Value" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Value"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="SupplierID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SupplierID"/>
+				<Property Name="SupplierName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SupplierName"/>
+				<Property Name="ItemDescriptions" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ItemDescriptions"/>
+				<Property Name="SearchForText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SearchForText"/>
+				<Property Name="___FK_8ed331c4ee1e13650abf5b2f" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_8ed331c4ee1e13650abf5b2f"/>
+				<Property Name="PurchaseOrder" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PurchaseOrder"/>
+				<Property Name="AccountAssignment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="AccountAssignment"/>
+				<Property Name="DeliveryDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DeliveryDate"/>
+				<Property Name="Plant" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Plant"/>
+				<Property Name="PaymentTerms" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PaymentTerms"/>
+				<Property Name="Incoterms" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Incoterms"/>
+				<Property Name="CompanyCode" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CompanyCode"/>
+				<Property Name="LabelItems" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Items (\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;LineItems\&quot;,\&quot;entityId\&quot;:\&quot;LineItems\&quot;,\&quot;navPropName\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropId\&quot;:\&quot;LineItemsSet\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;)\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;57179660c903ee6c2341239d&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;entityId&quot;:&quot;LineItems&quot;,&quot;navPropId&quot;:&quot;LineItemsSet&quot;}]}"
+					sap:label="LabelItems"/>
+				<Property Name="NbNotes" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Comments\&quot;,\&quot;entityId\&quot;:\&quot;Comments\&quot;,\&quot;navPropName\&quot;:\&quot;CommentsSet\&quot;,\&quot;navPropId\&quot;:\&quot;CommentsSet\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;572755aec6455b7517d79985&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;entityId&quot;:&quot;Comments&quot;,&quot;navPropId&quot;:&quot;CommentsSet&quot;}]}"
+					sap:label="NbNotes"/>
+				<NavigationProperty Name="PurchaseHeader"
+					Relationship="6a71a04abe391c371165e67b.PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"
+					FromRole="FromRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"
+					ToRole="ToRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"/>
+				<NavigationProperty Name="LineItemsSet" Relationship="6a71a04abe391c371165e67b.PurchaseContractHeaderLineItemsSetLineItems"
+					FromRole="FromRole_PurchaseContractHeaderLineItemsSetLineItems" ToRole="ToRole_PurchaseContractHeaderLineItemsSetLineItems"/>
+				<NavigationProperty Name="CommentsSet" Relationship="6a71a04abe391c371165e67b.PurchaseContractHeaderCommentsSetComments"
+					FromRole="FromRole_PurchaseContractHeaderCommentsSetComments" ToRole="ToRole_PurchaseContractHeaderCommentsSetComments"/>
+			</EntityType>
+			<Association Name="PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails">
+				<End Type="6a71a04abe391c371165e67b.PurchaseContractHeader" Multiplicity="1"
+					Role="FromRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"/>
+				<End Type="6a71a04abe391c371165e67b.PurchaseContractDetails" Multiplicity="1"
+					Role="ToRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_PurchaseContractHeaderPurchaseHeaderPurchaseContractDetails">
+						<PropertyRef Name="___FK_8ed331c4ee1e13650abf5b2f"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="PurchaseContractHeaderLineItemsSetLineItems">
+				<End Type="6a71a04abe391c371165e67b.PurchaseContractHeader" Multiplicity="1" Role="FromRole_PurchaseContractHeaderLineItemsSetLineItems"/>
+				<End Type="6a71a04abe391c371165e67b.LineItems" Multiplicity="*" Role="ToRole_PurchaseContractHeaderLineItemsSetLineItems"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_PurchaseContractHeaderLineItemsSetLineItems">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_PurchaseContractHeaderLineItemsSetLineItems">
+						<PropertyRef Name="___FK_afaf50623b0332990ae1c677"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="PurchaseContractHeaderCommentsSetComments">
+				<End Type="6a71a04abe391c371165e67b.PurchaseContractHeader" Multiplicity="1" Role="FromRole_PurchaseContractHeaderCommentsSetComments"/>
+				<End Type="6a71a04abe391c371165e67b.Comments" Multiplicity="*" Role="ToRole_PurchaseContractHeaderCommentsSetComments"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_PurchaseContractHeaderCommentsSetComments">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_PurchaseContractHeaderCommentsSetComments">
+						<PropertyRef Name="___FK_5aa9ca7c40af820a0ae1c871"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="PurchaseContractDetails">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="ItemNumber" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ItemNumber"/>
+				<Property Name="ProductDetails" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ProductDetails"/>
+				<Property Name="ProductDetails2" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ProductDetails2"/>
+				<Property Name="ProductDetailsMaterialGroupDescription" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ProductDetailsMaterialGroupDescription"/>
+				<Property Name="ProductDetailsMaterialGroup" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ProductDetailsMaterialGroup"/>
+				<Property Name="DeliveryAddressmetadatatype" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressmetadatatype"/>
+				<Property Name="DeliveryAddressPlant" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressPlant"/>
+				<Property Name="DeliveryAddressPlantName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressPlantName"/>
+				<Property Name="DeliveryAddressCustomerId" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressCustomerId"/>
+				<Property Name="DeliveryAddressCustomerName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressCustomerName"/>
+				<Property Name="DeliveryAddressAddressString" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryAddressAddressString"/>
+				<Property Name="SAPOrigin" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SAPOrigin"/>
+				<Property Name="ItemNumberFormatted" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ItemNumberFormatted"/>
+				<Property Name="PoNumberFormatted" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="PoNumberFormatted"/>
+				<Property Name="ItemCategory" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ItemCategory"/>
+				<Property Name="ItemCategoryDescription" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="ItemCategoryDescription"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Unit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Unit"/>
+				<Property Name="UnitDescription" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="UnitDescription"/>
+				<Property Name="Quantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quantity"/>
+				<Property Name="Value" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Value"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="PricePerUnit" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PricePerUnit"/>
+				<Property Name="CurrencyForPPU" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CurrencyForPPU"/>
+				<Property Name="QuantityForPPU" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="QuantityForPPU"/>
+				<Property Name="UnitForPPU" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="UnitForPPU"/>
+				<Property Name="UnitForPPUDescription" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="UnitForPPUDescription"/>
+				<Property Name="DeliveryDate" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="DeliveryDate"/>
+				<Property Name="DeliveryDateAlsoLater" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="DeliveryDateAlsoLater"/>
+				<Property Name="Incoterm" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Incoterm"/>
+				<Property Name="IncotermDescription" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="IncotermDescription"/>
+				<Property Name="IncotermLocation" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="IncotermLocation"/>
+				<Property Name="NumberOfNotes" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="NumberOfNotes"/>
+				<Property Name="NumberOfAttachments" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="NumberOfAttachments"/>
+				<Property Name="NumberServiceLines" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="NumberServiceLines"/>
+			</EntityType>
+			<EntityType Name="LineItems">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_afaf50623b0332990ae1c677" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_afaf50623b0332990ae1c677"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="ItemCategory" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ItemCategory"/>
+				<Property Name="Quantity" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quantity"/>
+				<Property Name="Measure" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Measure"/>
+				<Property Name="SubTotal" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SubTotal"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="MaterialGroup" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MaterialGroup"/>
+				<NavigationProperty Name="AccountAssignmentsSet" Relationship="6a71a04abe391c371165e67b.LineItemsAccountAssignmentsSetAccountAssignments"
+					FromRole="FromRole_LineItemsAccountAssignmentsSetAccountAssignments" ToRole="ToRole_LineItemsAccountAssignmentsSetAccountAssignments"/>
+				<NavigationProperty Name="PricingConditionsSet" Relationship="6a71a04abe391c371165e67b.LineItemsPricingConditionsSetPricingConditions"
+					FromRole="FromRole_LineItemsPricingConditionsSetPricingConditions" ToRole="ToRole_LineItemsPricingConditionsSetPricingConditions"/>
+				<NavigationProperty Name="Notes" Relationship="6a71a04abe391c371165e67b.LineItemsNotesNotes" FromRole="FromRole_LineItemsNotesNotes"
+					ToRole="ToRole_LineItemsNotesNotes"/>
+			</EntityType>
+			<Association Name="LineItemsAccountAssignmentsSetAccountAssignments">
+				<End Type="6a71a04abe391c371165e67b.LineItems" Multiplicity="1" Role="FromRole_LineItemsAccountAssignmentsSetAccountAssignments"/>
+				<End Type="6a71a04abe391c371165e67b.AccountAssignments" Multiplicity="*" Role="ToRole_LineItemsAccountAssignmentsSetAccountAssignments"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_LineItemsAccountAssignmentsSetAccountAssignments">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_LineItemsAccountAssignmentsSetAccountAssignments">
+						<PropertyRef Name="___FK_70c78d97828001f30ae1ccb9"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="LineItemsPricingConditionsSetPricingConditions">
+				<End Type="6a71a04abe391c371165e67b.LineItems" Multiplicity="1" Role="FromRole_LineItemsPricingConditionsSetPricingConditions"/>
+				<End Type="6a71a04abe391c371165e67b.PricingConditions" Multiplicity="*" Role="ToRole_LineItemsPricingConditionsSetPricingConditions"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_LineItemsPricingConditionsSetPricingConditions">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_LineItemsPricingConditionsSetPricingConditions">
+						<PropertyRef Name="___FK_2221e0ac606f644a0ae1ccd4"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="LineItemsNotesNotes">
+				<End Type="6a71a04abe391c371165e67b.LineItems" Multiplicity="1" Role="FromRole_LineItemsNotesNotes"/>
+				<End Type="6a71a04abe391c371165e67b.Notes" Multiplicity="*" Role="ToRole_LineItemsNotesNotes"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_LineItemsNotesNotes">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_LineItemsNotesNotes">
+						<PropertyRef Name="___FK_feb65906699b0c4b0bdb7a84"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Comments">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_5aa9ca7c40af820a0ae1c871" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_5aa9ca7c40af820a0ae1c871"/>
+				<Property Name="Comment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Comment"/>
+				<Property Name="User" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="User"/>
+			</EntityType>
+			<EntityType Name="AccountAssignments">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Object" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Object"/>
+				<Property Name="GL" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="GL"/>
+				<Property Name="Share" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Share"/>
+				<Property Name="Desc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Desc"/>
+				<Property Name="___FK_70c78d97828001f30ae1ccb9" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_70c78d97828001f30ae1ccb9"/>
+			</EntityType>
+			<EntityType Name="PricingConditions">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_2221e0ac606f644a0ae1ccd4" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_2221e0ac606f644a0ae1ccd4"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Value" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Price"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+			</EntityType>
+			<EntityType Name="Employees">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Department" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Department"/>
+			</EntityType>
+			<EntityType Name="Notes">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_feb65906699b0c4b0bdb7a84" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_feb65906699b0c4b0bdb7a84"/>
+				<Property Name="Note" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Note"/>
+				<Property Name="Author" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Author"/>
+			</EntityType>
+			<EntityType Name="Employee">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="EmployeeID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EmployeeID"/>
+				<Property Name="Position" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Position"/>
+				<Property Name="PersonnelAssignment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="PersonnelAssignment"/>
+				<Property Name="PersonnelAssignmentText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="PersonnelAssignmentText"/>
+				<NavigationProperty Name="PaystubSet" Relationship="6a71a04abe391c371165e67b.EmployeePaystubSetPaystub"
+					FromRole="FromRole_EmployeePaystubSetPaystub" ToRole="ToRole_EmployeePaystubSetPaystub"/>
+			</EntityType>
+			<Association Name="EmployeePaystubSetPaystub">
+				<End Type="6a71a04abe391c371165e67b.Employee" Multiplicity="1" Role="FromRole_EmployeePaystubSetPaystub"/>
+				<End Type="6a71a04abe391c371165e67b.Paystub" Multiplicity="*" Role="ToRole_EmployeePaystubSetPaystub"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_EmployeePaystubSetPaystub">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_EmployeePaystubSetPaystub">
+						<PropertyRef Name="___FK_dda37c1f3ab5fb550bdb4acc"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Paystub">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="StartDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StartDate"/>
+				<Property Name="EndDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EndDate"/>
+				<Property Name="Reason" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Reason"/>
+				<Property Name="GrossPay" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="GrossPay"/>
+				<Property Name="Deduction" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Deduction"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="Image" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Image"/>
+				<Property Name="Sequence" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Sequence"/>
+				<Property Name="___FK_dda37c1f3ab5fb550bdb4acc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.Employee"/>
+				<Property Name="___FK_4ce763654fd2f0350bdb4acc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.Paystub"/>
+				<Property Name="ConcatenGrossPay" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Gross Pay \&quot;,\&quot;id\&quot;:3}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Paystub\&quot;,\&quot;entityId\&quot;:\&quot;Paystub\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;GrossPay\&quot;,\&quot;propertyId\&quot;:\&quot;GrossPay\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:5}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Paystub\&quot;,\&quot;entityId\&quot;:\&quot;Paystub\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Currency\&quot;,\&quot;propertyId\&quot;:\&quot;Currency\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:6}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Paystub&quot;,&quot;propertyId&quot;:&quot;GrossPay&quot;,&quot;_id&quot;:&quot;57273a18f181a4d5873cf6e5&quot;},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Paystub&quot;,&quot;propertyId&quot;:&quot;Currency&quot;,&quot;_id&quot;:&quot;57273a18f181a4d5873cf6e4&quot;}]}"
+					sap:label="ConcanetGrossPay"/>
+				<Property Name="ConcatenDeductions" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Deductions \&quot;,\&quot;id\&quot;:3}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Paystub\&quot;,\&quot;entityId\&quot;:\&quot;Paystub\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Deduction\&quot;,\&quot;propertyId\&quot;:\&quot;Deduction\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:5}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Paystub\&quot;,\&quot;entityId\&quot;:\&quot;Paystub\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Currency\&quot;,\&quot;propertyId\&quot;:\&quot;Currency\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:6}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Paystub&quot;,&quot;propertyId&quot;:&quot;Deduction&quot;,&quot;_id&quot;:&quot;57273abf9845f4d087c921d5&quot;},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Paystub&quot;,&quot;propertyId&quot;:&quot;Currency&quot;,&quot;_id&quot;:&quot;57273abf9845f4d087c921d4&quot;}]}"
+					sap:label="ConcatenDeductions"/>
+				<Property Name="ConcatenCurrency" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Take Home Pay in \&quot;,\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Paystub\&quot;,\&quot;entityId\&quot;:\&quot;Paystub\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Currency\&quot;,\&quot;propertyId\&quot;:\&quot;Currency\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Paystub&quot;,&quot;propertyId&quot;:&quot;Currency&quot;,&quot;_id&quot;:&quot;57187e63fc3cc86f2394e31e&quot;}]}"
+					sap:label="ConcatenCurrency"/>
+				<NavigationProperty Name="EmployeeSet" Relationship="6a71a04abe391c371165e67b.PaystubEmployeeSetEmployee"
+					FromRole="FromRole_PaystubEmployeeSetEmployee" ToRole="ToRole_PaystubEmployeeSetEmployee"/>
+			</EntityType>
+			<Association Name="PaystubEmployeeSetEmployee">
+				<End Type="6a71a04abe391c371165e67b.Paystub" Multiplicity="1" Role="FromRole_PaystubEmployeeSetEmployee"/>
+				<End Type="6a71a04abe391c371165e67b.Employee" Multiplicity="1" Role="ToRole_PaystubEmployeeSetEmployee"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_PaystubEmployeeSetEmployee">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_PaystubEmployeeSetEmployee">
+						<PropertyRef Name="___FK_4ce763654fd2f0350bdb4acc"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

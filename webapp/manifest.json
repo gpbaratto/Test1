@@ -1,0 +1,163 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.sap.build.standard.approvePurchaseOrders",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"ach": "ach",
+		"resources": "resources.json",
+		"dataSources": {
+			"local": {
+				"uri": "/here/goes/your/serviceUrl/local/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.2masterdetail",
+			"version": "1.32.5"
+		}
+	},
+	"sap.fiori": {
+		"_version": "1.1.0",
+		"registrationIds": [],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "com.sap.build.standard.approvePurchaseOrders.view.App",
+			"type": "XML",
+			"async": false,
+			"id": "app"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "local",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"preload": true,
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.approvePurchaseOrders.view",
+				"controlId": "idAppControl",
+				"clearTarget": false,
+				"controlAggregation": "detailPages",
+				"async": false,
+				"bypassed": {
+					"target": [
+						"PurchaseOrderDetails",
+						"purchase_orders"
+					]
+				}
+			},
+			"targets": {
+				"purchase_orders": {
+					"controlAggregation": "masterPages",
+					"viewName": "purchase_orders",
+					"viewId": "purchase_orders",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"PurchaseOrderDetails": {
+					"controlAggregation": "detailPages",
+					"viewName": "PurchaseOrderDetails",
+					"viewId": "PurchaseOrderDetails",
+					"viewLevel": 2,
+					"transition": "slide"
+				},
+				"line_item": {
+					"controlAggregation": "detailPages",
+					"viewName": "line_item",
+					"viewId": "line_item",
+					"viewLevel": 1,
+					"transition": "slide"
+				}
+			},
+			"routes": [{
+				"pattern": "purchase_orders",
+				"name": "purchase_orders",
+				"target": [
+					"PurchaseOrderDetails",
+					"purchase_orders"
+				]
+			}, {
+				"pattern": "purchase_orders/PurchaseOrderDetails/:context:",
+				"name": "PurchaseOrderDetails",
+				"target": [
+					"purchase_orders",
+					"PurchaseOrderDetails"
+				]
+			}, {
+				"pattern": "purchase_orders/line_item/:context:",
+				"name": "line_item",
+				"target": [
+					"purchase_orders",
+					"line_item"
+				]
+			}, {
+				"pattern": "",
+				"name": "default",
+				"target": [
+					"PurchaseOrderDetails",
+					"purchase_orders"
+				]
+			}]
+		}
+	}
+}

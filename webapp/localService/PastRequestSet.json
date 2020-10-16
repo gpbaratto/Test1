@@ -1,0 +1,91 @@
+[{
+	"ID": "Hist1",
+	"Description": "Meeting",
+	"Destination": "Paris, France",
+	"Dates": "Dec 12, 2015 - Dec 15, 2015",
+	"Amount": 400,
+	"Currency": "EUR",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist2",
+	"Description": "Customer meeting Munich",
+	"Destination": "Munich, Germany",
+	"Dates": "Dec 20, 2015 - Dec 22 2015",
+	"Amount": 700,
+	"Currency": "EUR",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist3",
+	"Description": "Team meeting",
+	"Destination": "Barcelona, Spain",
+	"Dates": "Dec 10, 2015 - Dec 11, 2015",
+	"Amount": 250,
+	"Currency": "EUR",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist4",
+	"Description": "Team meeting",
+	"Destination": "Valencia, Spain",
+	"Dates": "Nov 12, 2015 - Nov 15, 2015",
+	"Amount": 450,
+	"Currency": "EUR",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist5",
+	"Description": "Kickoff meeting",
+	"Destination": "Miami, FLA, USA",
+	"Dates": "Nov 1, 2015 - Nov 4, 2015",
+	"Amount": 1000,
+	"Currency": "USD",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist6",
+	"Description": "Marketing event",
+	"Destination": "New York, NY, USA",
+	"Dates": "Dec 20, 2015 - Dec 22 2015",
+	"Amount": 2000,
+	"Currency": "USD",
+	"Status": "Rejected",
+	"StatusVal": "Error"
+}, {
+	"ID": "Hist7",
+	"Description": "User conference",
+	"Destination": "Palo Alto, CA, USA",
+	"Dates": "Dec 10, 2015 - Dec 11, 2015",
+	"Amount": 1000,
+	"Currency": "USD",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist8",
+	"Description": "Meeting",
+	"Destination": "Palo Alto, CA, USA",
+	"Dates": "Nov 12, 2015 - Nov 15, 2015",
+	"Amount": 1000,
+	"Currency": "USD",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist9",
+	"Description": "Kickoff meeting",
+	"Destination": "Miami, FLA, USA",
+	"Dates": "Nov 12, 2015 - Nov 15, 2015",
+	"Amount": 500,
+	"Currency": "USD",
+	"Status": "Approved",
+	"StatusVal": "Success"
+}, {
+	"ID": "Hist10",
+	"Description": "User conference",
+	"Destination": "Palo Alto, CA, USA",
+	"Dates": "Nov 1, 2015 - Nov 4, 2015",
+	"Amount": 1200,
+	"Currency": "USD",
+	"Status": "Rejected",
+	"StatusVal": "Error"
+}]

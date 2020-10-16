@@ -1,0 +1,183 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.approvePurchaseOrders.controller.PurchaseOrderDetails"
+	xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Page showHeader="true" title="Purchase Order" showFooter="true" showNavButton="false">
+		<content>
+			<layout:VerticalLayout width="100%" visible="true">
+				<layout:content>
+					<ObjectHeader intro="" title="{SupplierName}" icon=""
+						number="{path: 'Value', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="{Currency}"
+						numberState="None" titleActive="true" backgroundDesign="Translucent" condensed="false" visible="true" titlePress="_onObjectHeaderTitlePress">
+						<attributes>
+							<ObjectAttribute text="{CreatedByName}" active="true" visible="true" press="_onObjectAttributePress"/>
+						</attributes>
+						<statuses>
+							<ObjectStatus text="Today" state="None" visible="true"/>
+						</statuses>
+						<markers/>
+					</ObjectHeader>
+				</layout:content>
+			</layout:VerticalLayout>
+			<IconTabBar expandable="true" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="Ok">
+				<items>
+					<IconTabFilter icon="sap-icon://hint" iconColor="Neutral" text="" count="" design="Vertical" enabled="true" showAll="false"
+						textDirection="Inherit" visible="true">
+						<content>
+							<form:Form width="100%" editable="false" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Purchase Order" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{PurchaseOrder}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Account Assignment" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{AccountAssignment}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Delivery Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{DeliveryDate}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Plant" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{Plant}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Payment Terms" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{PaymentTerms}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Incoterms" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{Incoterms}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Company Code" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Text text="{CompanyCode}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="4" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://notes" iconColor="Default" text=""
+						count="{path: 'NbNotes', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+						<content>
+							<List width="100%" growing="false" growingThreshold="20" growingScrollToLoad="false" backgroundDesign="Solid"
+								items="{path:'CommentsSet', templateShareable:true}">
+								<items>
+									<FeedListItem icon="" sender="" text="{Comment}" info="{User}" timestamp=""/>
+								</items>
+							</List>
+						</content>
+					</IconTabFilter>
+				</items>
+				<content>
+					<Text text="Tab Bar Content goes here ..." width="300px" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit"
+						visible="true"/>
+				</content>
+			</IconTabBar>
+			<form:ResponsiveGridLayout columnsM="1" columnsL="2" emptySpanL="0" emptySpanM="0" emptySpanS="0" visible="true" labelSpanS="12"
+				labelSpanM="2" labelSpanL="4"/>
+			<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false"
+				class="sapUiResponsiveMargin" itemPress="_onTableItemPress" items="{path:'LineItemsSet', templateShareable:true}">
+				<infoToolbar/>
+				<headerToolbar>
+					<Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+						<content>
+							<Text text="{LabelItems}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Item Category" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="100px" hAlign="Right" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Subtotal" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation">
+						<cells>
+							<ObjectIdentifier title="{Description}" text="" titleActive="false" visible="true"/>
+							<Text text="{ItemCategory}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<ObjectNumber number="{Quantity}" unit="{Measure}" emphasized="true" state="None"/>
+							<ObjectNumber number="{SubTotal}" unit="{Currency}" emphasized="true" state="None"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Approve" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress"/>
+					<Button text="Reject" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress1"/>
+					<Button text="Forward" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress2"/>
+					<Button text="" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

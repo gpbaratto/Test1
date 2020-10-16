@@ -1,0 +1,190 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.approvePurchaseOrders.controller.line_item" xmlns="sap.m"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="Item Details" showFooter="false" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<Label text="" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<layout:VerticalLayout width="100%" visible="true">
+				<layout:content>
+					<ObjectHeader intro="" title="{Description}" icon="" number="{SubTotal}" numberUnit="{Currency}" numberState="None"
+						backgroundDesign="Transparent" condensed="false" visible="true">
+						<attributes>
+							<ObjectAttribute title="" text="300 Each" active="false" visible="true"/>
+							<ObjectAttribute text="{ItemCategory}" active="false" visible="true"/>
+						</attributes>
+						<statuses/>
+						<markers/>
+					</ObjectHeader>
+				</layout:content>
+			</layout:VerticalLayout>
+			<form:Form width="100%" editable="false" visible="true">
+				<form:title>
+					<core:Title text="Information" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Material Group" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="Mechanics (00104)" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="4" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<form:Form width="100%" editable="false" visible="true">
+				<form:title>
+					<core:Title text="Delivery on November 15, 2015" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Plant" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="Atlanta" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Address" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="867 1 300 Peach tree street South, Atlanta GA 30310 , United States" width="auto" maxLines="1" wrapping="false"
+										textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="4" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<List mode="SingleSelectMaster" width="100%" headerText="Notes" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+				growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'Notes', templateShareable:true}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar/>
+				<items>
+					<StandardListItem icon="sap-icon://person-placeholder" title="{Note}" description="{Author}" info="" infoState="None" type="Active"
+						selected="false" visible="true"/>
+				</items>
+			</List>
+			<form:Form width="100%" editable="false" visible="true">
+				<form:title>
+					<core:Title text="Account Assignment" level="Auto"/>
+				</form:title>
+				<form:formContainers/>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="4" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false"
+				class="sapUiResponsiveMargin" items="{path:'AccountAssignmentsSet', templateShareable:true}">
+				<infoToolbar/>
+				<headerToolbar/>
+				<columns>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Objects" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="G/L Account" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Right" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Share" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Inactive">
+						<cells>
+							<ObjectIdentifier title="{Object}" text="{Desc}" titleActive="false" visible="true"/>
+							<Text text="{GL}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<ObjectNumber number="100" unit="%" emphasized="true" state="None"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<form:Form width="100%" editable="false" visible="true">
+				<form:title>
+					<core:Title text="Pricing Conditions" level="Auto"/>
+				</form:title>
+				<form:formContainers/>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="4" columnsM="1" labelSpanM="4" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false"
+				class="sapUiResponsiveMargin" items="{path:'PricingConditionsSet', templateShareable:true}">
+				<infoToolbar/>
+				<headerToolbar/>
+				<columns>
+					<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Right" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" mergeDuplicates="false">
+						<header>
+							<Text text="Price" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</header>
+						<footer/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Inactive">
+						<cells>
+							<ObjectIdentifier title="{Description}" text="" titleActive="false" visible="true"/>
+							<ObjectNumber number="{Value}" unit="{Currency}" emphasized="true" state="None"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Toolbar width="auto" height="35px" design="Solid" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Accept" type="Accept" iconFirst="false" width="200px" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Reject" iconFirst="false" width="200px" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</Toolbar>
+		</footer>
+		<headerContent>
+			<Button text="" type="Default" icon="sap-icon://down" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+			<Button text="" type="Default" icon="sap-icon://up" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+		</headerContent>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>
